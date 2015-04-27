@@ -1,0 +1,42 @@
+%article.slide-container{data: {active_slide: 0}}
+  %section.slide{data: {slide: 0}}
+    .container
+      %h1 Atlas - Share New Worlds
+      %p Atlas is an immersive Virtual Reality experience that’s built to share. Explore fantastic worlds and capture what you see. Share your personal journey and show people where you’ve been.
+      = partial 'mailchimp'
+
+  %section.slide{data: {slide: 1}}
+    .container
+      .slide-image
+      %h2 Transport Yourself
+      %p Immerse yourself in another place. Don’t just dream of fictional worlds. Visit them. Explore beyond your imagination.
+      = partial 'mailchimp'
+
+  %section.slide{data: {slide: 2}}
+    .container
+      .slide-image
+      %h2 Capture Your Journey
+      %p Bring your experiences with you. Turn your VR adventure into beautiful photos and video. Make every trip a personal memory.
+      = partial 'mailchimp'
+
+  %section.slide{data: {slide: 3}}
+    .container
+      .slide-image
+      %h2 Share With The World
+      %p Spread the wonder of your adventures. Don’t just talk about your VR experience, show it off. Share your perspective through your own captured imagery.
+      = partial 'mailchimp'
+
+%a.arrow-container.arrow-container-left{href: '#'}
+  .arrow-bg-overlay
+  .arrow.arrow-left
+
+%a.arrow-container.arrow-container-right{href: '#'}
+  .arrow-bg-overlay
+  .arrow.arrow-right
+
+%footer
+  %p
+    A project of
+    %a{href: 'http://www.thesoapcollective.com', target: '_blank'} The Soap Collective
+    %br
+    &copy; 2015, All rights reserved.
