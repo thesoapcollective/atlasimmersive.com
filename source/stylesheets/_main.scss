@@ -2,7 +2,8 @@ $grid-size: 18px;
 $grid-double-size: $grid-size * 2;
 $grid-half-size: $grid-size / 2;
 
-$slide-speed: .4s;
+$slide-speed: .5s;
+$slide-opacity-speed: 1.5s;
 $opacity-speed: .3s;
 
 html {
@@ -103,7 +104,8 @@ footer {
   align-items: center;
   position: absolute;
   top: 0;
-  transition: left $slide-speed;
+  opacity: 0;
+  transition: left $slide-speed, opacity $slide-opacity-speed;
 }
 
 .slide-image {
@@ -136,6 +138,7 @@ footer {
 .slide-container[data-active-slide='0'] {
   .slide[data-slide='0'] {
     left: 0;
+    opacity: 1;
   }
 
   .slide[data-slide='1'],
@@ -148,6 +151,7 @@ footer {
 .slide-container[data-active-slide='1'] {
   .slide[data-slide='1'] {
     left: 0;
+    opacity: 1;
   }
 
   .slide[data-slide='0'] {
@@ -163,6 +167,7 @@ footer {
 .slide-container[data-active-slide='2'] {
   .slide[data-slide='2'] {
     left: 0;
+    opacity: 1;
   }
 
   .slide[data-slide='0'],
@@ -178,6 +183,7 @@ footer {
 .slide-container[data-active-slide='3'] {
   .slide[data-slide='3'] {
     left: 0;
+    opacity: 1;
   }
 
   .slide[data-slide='0'],
@@ -305,6 +311,8 @@ footer {
 }
 
 .mc-field-group {
+  width: 100%;
+  max-width: 290px;
   display: inline-block;
   vertical-align: top;
 
@@ -313,6 +321,7 @@ footer {
   }
 
   input[type="email"] {
+    width: 100%;
     padding: $grid-half-size $grid-size;
     background: none;
     border: 1px solid #fff;
