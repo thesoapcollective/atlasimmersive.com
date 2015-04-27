@@ -6,6 +6,18 @@ $slide-speed: .5s;
 $slide-opacity-speed: 1.5s;
 $opacity-speed: .3s;
 
+$logoWidth: 600px;
+$logoHeight: 119px;
+$transportWidth: 300px;
+$transportHeight: 259px;
+$captureWidth: 375px;
+$captureHeight: 217px;
+$shareWidth: 338px;
+$shareHeight: 157px;
+
+$logoSmallWidth: 280px;
+$slideImageSmallWidth: 200px;
+
 html {
   box-sizing: border-box;
   outline: none;
@@ -63,14 +75,12 @@ h2 {
 }
 
 h1 {
-  width: 600px;
-  height: 119px;
-  margin-bottom: $grid-double-size;
+  @include text-overflow;
+  width: $logoWidth;
+  height: $logoHeight;
+  margin: 0 auto $grid-double-size;
   background: image-url('atlas_logo.png') no-repeat center center;
-  background-size: 600px 119px;
-  overflow: hidden;
-  text-indent: 100%;
-  white-space: nowrap;
+  background-size: $logoWidth $logoHeight;
 }
 
 p {
@@ -79,12 +89,12 @@ p {
 }
 
 footer {
+  width: 100%;
   position: absolute;
-  left: 50%;
+  left: 0;
   bottom: $grid-size;
   text-align: center;
   font-size: .7rem;
-  transform: translateX(-50%);
 
   a:hover {
     text-decoration: underline;
@@ -114,24 +124,24 @@ footer {
   background-position: center center;
 
   .slide[data-slide='1'] & {
-    width: 300px;
-    height: 259px;
+    width: $transportWidth;
+    height: $transportHeight;
     background-image: image-url('transport.png');
-    background-size: 300px 259px;
+    background-size: $transportWidth $transportHeight;
   }
 
   .slide[data-slide='2'] & {
-    width: 375px;
-    height: 217px;
+    width: $captureWidth;
+    height: $captureHeight;
     background-image: image-url('capture.png');
-    background-size: 375px 217px;
+    background-size: $captureWidth $captureHeight;
   }
 
   .slide[data-slide='3'] & {
-    width: 338px;
-    height: 157px;
+    width: $shareWidth;
+    height: $shareHeight;
     background-image: image-url('share.png');
-    background-size: 338px 157px;
+    background-size: $shareWidth $shareHeight;
   }
 }
 
@@ -196,7 +206,7 @@ footer {
 .bg-overlay {
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 1;
@@ -344,5 +354,58 @@ footer {
     input[type="email"] {
       border-color: rgba(#fff, .5);
     }
+  }
+}
+
+@media only screen and (max-width: 639px),
+       only screen and (max-height: 630px) {
+  html {
+    font-size: 16px;
+  }
+
+  h1 {
+    width: $logoSmallWidth;
+    height: $logoSmallWidth * $logoHeight / $logoWidth;
+    background-size: $logoSmallWidth ($logoSmallWidth * $logoHeight / $logoWidth);
+  }
+
+  footer {
+    padding-bottom: $grid-size;
+    position: static;
+  }
+
+  .slide {
+    padding-top: $grid-double-size;
+    display: block;
+  }
+
+  .slide-image {
+    .slide[data-slide='1'] & {
+      width: $slideImageSmallWidth;
+      height: $slideImageSmallWidth * $transportHeight / $transportWidth;
+      background-size: $slideImageSmallWidth ($slideImageSmallWidth * $transportHeight / $transportWidth);
+    }
+
+    .slide[data-slide='2'] & {
+      width: $slideImageSmallWidth;
+      height: $slideImageSmallWidth * $captureHeight / $captureWidth;
+      background-size: $slideImageSmallWidth ($slideImageSmallWidth * $captureHeight / $captureWidth);
+    }
+
+    .slide[data-slide='3'] & {
+      width: $slideImageSmallWidth;
+      height: $slideImageSmallWidth * $shareHeight / $shareWidth;
+      background-size: $slideImageSmallWidth ($slideImageSmallWidth * $shareHeight / $shareWidth);
+    }
+  }
+
+  .mailchimp-container {
+    .button {
+      height: 43px;
+    }
+  }
+
+  .mc-field-group {
+    max-width: 200px;
   }
 }
