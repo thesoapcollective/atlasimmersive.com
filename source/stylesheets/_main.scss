@@ -297,6 +297,11 @@ footer {
   transform: scaleX(-1);
 }
 
+input {
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
 .mailchimp-section {
   margin-top: $grid-double-size;
 
