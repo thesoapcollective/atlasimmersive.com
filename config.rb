@@ -71,4 +71,7 @@ configure :build do
   # set :http_prefix, "/Content/images/"
 
   activate :autoprefixer
+
+  # Pretty URLs
+  activate :directory_indexes
 end

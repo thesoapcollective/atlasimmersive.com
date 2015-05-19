@@ -1,0 +1,27 @@
+%article
+  .container
+    %section
+      %h2 River Demo
+      %p.intro Thanks for taking the time to check out our Atlas technical demo! What you’ll experience here is an early alpha of our image capture system using a simple test scene in Unity.
+
+    %section
+      %h3 Downloads
+      %ul.downloads.list-reset
+        %li
+          %a.btn{href: '#'} Unity Demo
+        %li
+          %a.btn{href: '#'} Atlas Pitch Deck
+
+    %section
+      %h3 Instructions
+      %ul.instructions
+        %li Download and unzip the Unity Demo (Windows Only).
+        %li Ensure that your Oculus Rift DK2 is connected and set to “Extend” display mode.
+        %li Set the Oculus Rift to be your primary display.
+        %li Run “AtlasAlpha.exe” from the Atlas Unity Demo folder.
+        %li From within the experience, press Space Bar at any time to capture a screenshot.
+        %li
+          Your screenshots will automatically be uploaded and viewable
+          = succeed '.' do
+            %a.bold.underline{href: '#', target: '_blank'} here
+        %li Screenshots are also stored locally in the “/screenshots” folder within the Atlas Unity Demo folder.

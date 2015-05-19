@@ -4,7 +4,7 @@ $grid-half-size: $grid-size / 2;
 
 $slide-speed: .5s;
 $slide-opacity-speed: 1.5s;
-$opacity-speed: .3s;
+$opacity-speed: .25s;
 
 $logoWidth: 600px;
 $logoHeight: 119px;
@@ -68,7 +68,8 @@ p {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   margin-bottom: $grid-size;
   text-transform: uppercase;
   letter-spacing: 10px;
@@ -83,9 +84,22 @@ h1 {
   background-size: $logoWidth $logoHeight;
 }
 
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
 p {
   padding: 0 $grid-half-size;
   display: block;
+}
+
+input {
+  border-radius: 0;
+  -webkit-appearance: none;
 }
 
 footer {
@@ -97,6 +111,36 @@ footer {
   font-size: .7rem;
 
   a:hover {
+    text-decoration: underline;
+  }
+}
+
+.btn {
+  padding: $grid-half-size $grid-size;
+  background: #fff;
+  color: #000;
+  opacity: 1;
+  text-align: center;
+  font-size: 1rem;
+  transition: opacity $opacity-speed;
+
+  &:hover {
+    opacity: .5;
+  }
+}
+
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.underline {
+  &:hover {
     text-decoration: underline;
   }
 }
@@ -297,11 +341,6 @@ footer {
   transform: scaleX(-1);
 }
 
-input {
-  border-radius: 0;
-  -webkit-appearance: none;
-}
-
 .mailchimp-section {
   margin-top: $grid-double-size;
 
@@ -314,15 +353,7 @@ input {
   .button {
     height: 49px;
     margin-left: -4px;
-    padding: $grid-half-size $grid-size;
-    background: #fff;
     border: none;
-    opacity: 1;
-    transition: opacity $opacity-speed;
-
-    &:hover {
-      opacity: .5;
-    }
   }
 }
 
@@ -360,6 +391,46 @@ input {
     input[type="email"] {
       border-color: rgba(#fff, .5);
     }
+  }
+}
+
+body.river {
+  article {
+    padding-top: $grid-double-size;
+  }
+
+  section {
+    margin-bottom: $grid-double-size;
+  }
+
+  .intro {
+    text-align: left;
+  }
+
+  .downloads {
+    li:first-child {
+      margin-bottom: $grid-size;
+    }
+  }
+
+  .instructions {
+    max-width: 418px;
+    margin: 0 auto;
+    padding: 0 $grid-half-size;
+    text-align: left;
+    font-size: .7rem;
+
+    li {
+      margin-bottom: 4px;
+    }
+  }
+
+  .btn {
+    max-width: 282px;
+    margin: 0 auto;
+    padding-top: $grid-size;
+    padding-bottom: $grid-size;
+    display: block;
   }
 }
 
@@ -447,5 +518,11 @@ input {
 
   .mc-field-group {
     max-width: 200px;
+  }
+
+  body.river {
+    .instructions {
+      padding-left: $grid-size;
+    }
   }
 }
